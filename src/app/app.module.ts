@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms'
 // import { DataTableModule,SharedModule } from 'primeng/primeng';
 import { HttpModule } from '@angular/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
