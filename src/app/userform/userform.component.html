@@ -1,0 +1,28 @@
+<!--<form class = "content"-->
+      <!--[formGroup] = "userForm">-->
+
+  <!--&lt;!&ndash;<div class = "formGroup">&ndash;&gt;-->
+  <!--&lt;!&ndash;<p-dropdown [options]="technologies" formControlName="technologies" id = "tech" ngModel></p-dropdown>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--<div class="container">-->
+    <!--<label>FirstName</label>-->
+    <!--<input type="text" placeholder="Enter First Name" formControlName="FirstName">-->
+  <!--</div>-->
+
+  <!--<button pButton type="submit" (click)="onSubmit()" label="Submit"></button>-->
+
+<!--</form>-->
+
+
+  <div>
+    <input
+      [(ngModel)]=name
+      placeholder="Name">
+    <br>
+    <button (click)="onSubmit()"> Submit</button>
+
+    <h2>Name: {{returnedName}}</h2>
+  </div>
+
+
