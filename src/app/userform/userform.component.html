@@ -1,28 +1,35 @@
 <!--<form class = "content"-->
-      <!--[formGroup] = "userForm">-->
-
-  <!--&lt;!&ndash;<div class = "formGroup">&ndash;&gt;-->
-  <!--&lt;!&ndash;<p-dropdown [options]="technologies" formControlName="technologies" id = "tech" ngModel></p-dropdown>&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--[formGroup] = "userForm"-->
+      <!--(ngSubmit)="onSubmit(userForm.value)">-->
 
   <!--<div class="container">-->
     <!--<label>FirstName</label>-->
     <!--<input type="text" placeholder="Enter First Name" formControlName="FirstName">-->
   <!--</div>-->
 
-  <!--<button pButton type="submit" (click)="onSubmit()" label="Submit"></button>-->
+  <!--<div class="container">-->
+    <!--<label>LastName</label>-->
+    <!--<input type="text" placeholder="Enter First Name" formControlName="FirstName">-->
+  <!--</div>-->
+
+  <!--<button pButton type="submit" label="Submit">Submit</button>-->
+
+
+  <!--<h2>Name: {{returnedName}}</h2>-->
 
 <!--</form>-->
 
 
+<form class = "content"  [formGroup] = "userForm" (ngSubmit)="onSubmit(userForm.value)">
   <div>
-    <input
-      [(ngModel)]=name
-      placeholder="Name">
+    <input formControlName=FirstName placeholder="First Name">
+    <br>
+    <br>
+    <input formControlName=LastName placeholder="Last Name">
+    <br>
     <br>
     <button (click)="onSubmit()"> Submit</button>
 
     <h2>Name: {{returnedName}}</h2>
   </div>
-
-
+</form>
