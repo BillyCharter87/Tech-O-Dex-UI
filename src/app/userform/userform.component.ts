@@ -27,53 +27,16 @@ export class UserformComponent implements OnInit {
 
   public onSubmit(value: any) {
 
-    this.userFormService.submitUserForm(value);
+    this.userFormService.submitUserForm(value)
+      .subscribe(
+        value => {
+          console.log('[POST] create Customer successfully', value);
+        }, error => {
+          console.log('FAIL to create Customer!');
+        },
+        () => {
+          console.log('POST Customer - now completed.');
+        });
     this.submitted = true;
   }
 }
-
-
-// import { Component } from '@angular/core';
-// import {Http, Response, Headers} from '@angular/http';
-// import {stringDistance} from "codelyzer/util/utils";
-//
-// @Component({
-//   selector: 'app-userform',
-//   templateUrl: './userform.component.html',
-//   styleUrls: ['./userform.component.css'],
-// })
-// export class UserformComponent{
-//
-//   constructor(private http:Http ) {}
-//   fName ='';
-//   lName ='';
-//
-//   returnedName ='';
-//
-//   public onSubmit() {
-//
-//     // const url = 'http://localhost:8080/greeting/?name=' + this.name;
-//     const url = 'http://localhost:8080/greeting'
-//
-//
-//     let f : string = '';
-//     let l : string = '';
-//
-//     let data = {
-//       f = this.fName,
-//       l = this.lName
-//     }
-//
-//
-//     const headers = new Headers();
-//     headers.append('Content-Type','application/json; charset=utf=8');
-//
-//     this.http.post(url, data, headers)
-//       .subscribe(
-//         (res: Response) => {
-//           const nameResp = res.json();
-//           this.returnedName = nameResp.name;
-//         }
-//       )
-//   }
-// }

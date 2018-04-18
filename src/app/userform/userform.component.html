@@ -1,25 +1,3 @@
-<!--<form class = "content"-->
-      <!--[formGroup] = "userForm"-->
-      <!--(ngSubmit)="onSubmit(userForm.value)">-->
-
-  <!--<div class="container">-->
-    <!--<label>FirstName</label>-->
-    <!--<input type="text" placeholder="Enter First Name" formControlName="FirstName">-->
-  <!--</div>-->
-
-  <!--<div class="container">-->
-    <!--<label>LastName</label>-->
-    <!--<input type="text" placeholder="Enter First Name" formControlName="FirstName">-->
-  <!--</div>-->
-
-  <!--<button pButton type="submit" label="Submit">Submit</button>-->
-
-
-  <!--<h2>Name: {{returnedName}}</h2>-->
-
-<!--</form>-->
-
-
 <form class = "content"  [formGroup] = "userForm" (ngSubmit)="onSubmit(userForm.value)">
   <div>
     <input formControlName=FirstName placeholder="First Name">
