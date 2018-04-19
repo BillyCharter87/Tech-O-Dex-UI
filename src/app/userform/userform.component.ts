@@ -20,8 +20,8 @@ export class UserformComponent implements OnInit {
 
   ngOnInit() {
     this.userForm = new FormGroup({
-      FirstName : new FormControl(''),
-      LastName : new FormControl('')
+      firstName : new FormControl(''),
+      lastName : new FormControl('')
     })
   }
 

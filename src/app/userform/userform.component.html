@@ -1,9 +1,9 @@
 <form class = "content"  [formGroup] = "userForm" (ngSubmit)="onSubmit(userForm.value)">
   <div>
-    <input formControlName=FirstName placeholder="First Name">
+    <input formControlName=firstName placeholder="First Name">
     <br>
     <br>
-    <input formControlName=LastName placeholder="Last Name">
+    <input formControlName=lastName placeholder="Last Name">
     <br>
     <br>
     <button (click)="onSubmit()"> Submit</button>

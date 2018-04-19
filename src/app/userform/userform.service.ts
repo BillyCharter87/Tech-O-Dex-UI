@@ -11,11 +11,9 @@ export class UserformService {
 
   public submitUserForm(greeting : Greeting): Observable<Response> {
 
-    console.log(greeting)
-
     const url = 'http://localhost:8080/greeting'
     const headers = new Headers();
-    headers.append('Content-Type','application/json; charset=utf=8');
+    headers.append('Content-Type','application/json charset=utf=8');
     return this.http.post(url, greeting, headers);
   }
 }
