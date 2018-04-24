@@ -21,11 +21,13 @@ export class UserformComponent implements OnInit {
   ngOnInit() {
     this.userForm = new FormGroup({
       firstName : new FormControl(''),
-      lastName : new FormControl('')
+      lastName : new FormControl(''),
+      eId : new FormControl(''),
+      tech : new FormControl('')
     })
   }
 
-  public onSubmit(value: any) {
+  public onRegister(value: any) {
 
     this.userFormService.submitUserForm(value)
       .subscribe(
