@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms'
 // import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 // import { DataTableModule,SharedModule } from 'primeng/primeng';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { HttpModule } from '@angular/http';
     // SharedModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
