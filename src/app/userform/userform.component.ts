@@ -16,7 +16,7 @@ export class UserformComponent implements OnInit {
   private submitted;
   returnedName ='';
 
-  constructor(private http:Http, private userFormService: UserformService) {}
+  constructor(private userFormService: UserformService) {}
 
   ngOnInit() {
     this.userForm = new FormGroup({
