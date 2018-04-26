@@ -1,20 +1,17 @@
-import { Injectable } from '@angular/core';
-import { SelectItem } from 'primeng/primeng';
+
+import {Injectable} from "@angular/core";
+import {Http} from "@angular/http";
+import {Car} from "./table.interface";
 
 @Injectable()
-export class TableService {
+export class CarService {
 
-  dummyData: SelectItem[];
+  constructor(private http: Http) {}
 
-  constructor() { }
-
-  public getExperts(){
-    this.loadDummyData()
-    let hi = 'hi';
-    return hi;
-  }
-
-  private loadDummyData(){
-
+  getCarsSmall() {
+    return this.http.get('/showcase/resources/data/cars-small.json')
+      .toPromise()
+      .then(res => <Car[]> res.json().data)
+      .then(data => { return data; });
   }
 }

@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { TableService } from './table.service';
+import {CarService} from './table.service';
+import {OnInit, Component} from "@angular/core";
+import {Car} from "./table.interface";
+
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
-  providers: [TableService]
+  providers: [CarService]
 })
-export class TableComponent implements OnInit {
+export class DataTableDemo implements OnInit {
 
-  constructor(private tableService: TableService ) { }
+  cars: Car[];
+
+  constructor(private carService: CarService) { }
 
   ngOnInit() {
-      this.tableService.getExperts();
+    this.carService.getCarsSmall().then(cars => this.cars = cars);
   }
-
 }
