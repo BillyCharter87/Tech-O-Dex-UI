@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Http, Headers, Response } from '@angular/http';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Registrant } from './registrant.interface';
 import 'rxjs/add/operator/map'
