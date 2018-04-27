@@ -1,6 +1,6 @@
 import { TableService} from './table.service';
 import { OnInit, Component} from "@angular/core";
-import { Tech} from "./table.interface";
+import { Tech} from "./tech.interface";
 import { FormGroup, FormControl } from '@angular/forms'
 
 
@@ -20,13 +20,22 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.techForm = new FormGroup({
-      tech : new FormControl('')
+      technology : new FormControl('')
     })
   }
 
   public onFindAll(value: any) {
 
-    this.tableService.getAllTechs(value).then(tech => this.tech = tech);
+    this.tableService.getAllTechs(value)
+  .subscribe(
+      value => {
+        console.log('[POST] create Customer successfully', value);
+      }, error => {
+        console.log('FAIL to create Customer!');
+      },
+      () => {
+        console.log('POST Customer - now completed.');
+      });
     this.submitted = true;
   }
 }

@@ -1,8 +1,8 @@
-<form class = "content"  [formGroup] = "userForm" (ngSubmit)="onFindAll(userForm.value)">
+<form class = "content"  [formGroup] = "techForm" (ngSubmit)="onFindAll(techForm.value)">
   <div>
-    <input formControlName=tech placeholder="Technology To Search For">
+    <input formControlName=technology placeholder="Technology To Search For">
     <br>
-    <button (click)="onFindAll()"> Register</button>
+    <button (click)="onFindAll()"> Find Tech</button>
   </div>
 </form>
 

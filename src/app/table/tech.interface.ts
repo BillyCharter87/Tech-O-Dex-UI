@@ -2,5 +2,5 @@ export interface Tech {
   firstName: string;
   lastName: string;
   eId: string;
-  tech: string;
+  technology: string;
 }
