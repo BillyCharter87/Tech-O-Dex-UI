@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { DataTableModule,SharedModule } from 'primeng/primeng';
+import { TableModule } from "./table/table.module";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DataTableModule,SharedModule } from 'primeng/primeng';
     DataTableModule,
     SharedModule,
     HttpClientModule,
+    TableModule,
     HttpModule
   ],
   providers: [HttpClient],

@@ -4,12 +4,12 @@ import {Http} from "@angular/http";
 import {Car} from "./table.interface";
 
 @Injectable()
-export class CarService {
+export class TableService {
 
   constructor(private http: Http) {}
 
-  getCarsSmall() {
-    return this.http.get('/showcase/resources/data/cars-small.json')
+  getAllTechs(tech: String) {
+    return this.http.get('http://localhost:8080/findAll', tech)
       .toPromise()
       .then(res => <Car[]> res.json().data)
       .then(data => { return data; });

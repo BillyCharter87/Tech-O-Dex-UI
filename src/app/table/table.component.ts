@@ -1,21 +1,32 @@
-import {CarService} from './table.service';
-import {OnInit, Component} from "@angular/core";
-import {Car} from "./table.interface";
+import { TableService} from './table.service';
+import { OnInit, Component} from "@angular/core";
+import { Tech} from "./table.interface";
+import { FormGroup, FormControl } from '@angular/forms'
 
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
-  providers: [CarService]
+  providers: [TableService]
 })
-export class DataTableDemo implements OnInit {
+export class TableComponent implements OnInit {
 
-  cars: Car[];
+  tech: Tech[];
+  techForm: FormGroup;
+  private submitted;
 
-  constructor(private carService: CarService) { }
+  constructor(private tableService: TableService) {}
 
   ngOnInit() {
-    this.carService.getCarsSmall().then(cars => this.cars = cars);
+    this.techForm = new FormGroup({
+      tech : new FormControl('')
+    })
+  }
+
+  public onFindAll(value: any) {
+
+    this.tableService.getAllTechs(value).then(tech => this.tech = tech);
+    this.submitted = true;
   }
 }

@@ -1,6 +1,6 @@
-export interface Car {
-  vin;
-  year;
-  brand;
-  color;
+export interface Tech {
+  firstName: string;
+  lastName: string;
+  eId: string;
+  tech: string;
 }
