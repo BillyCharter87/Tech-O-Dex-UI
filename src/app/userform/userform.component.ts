@@ -30,12 +30,12 @@ export class UserformComponent implements OnInit {
     this.userFormService.submitUserForm(value)
       .subscribe(
         value => {
-          console.log('[POST] create Customer successfully', value);
+          console.log('[POST] create Registrants successfully', value);
         }, error => {
-          console.log('FAIL to create Customer!');
+          console.log('FAIL to create Registrants!');
         },
         () => {
-          console.log('POST Customer - now completed.');
+          console.log('POST Registrants - now completed.');
         });
     this.submitted = true;
   }

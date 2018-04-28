@@ -13,7 +13,7 @@ import { ButtonModule } from 'primeng/components/button/button';
     DataTableModule,
     SharedModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   exports: [TableComponent],
   declarations: [TableComponent]
