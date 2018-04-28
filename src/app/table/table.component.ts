@@ -30,6 +30,7 @@ export class TableComponent implements OnInit {
   .subscribe(
       value => {
         console.log('[GET] Registrants successfully', value);
+        return this.tech;
       }, error => {
         console.log('FAIL to read Registrants!');
       },
