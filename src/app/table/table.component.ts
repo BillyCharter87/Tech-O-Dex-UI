@@ -25,18 +25,7 @@ export class TableComponent implements OnInit {
   }
 
   public onFindAll(value: any) {
-
-    this.tableService.getAllTechs(value)
-  .subscribe(
-      value => {
-        console.log('[GET] Registrants successfully', value);
-        return this.tech;
-      }, error => {
-        console.log('FAIL to read Registrants!');
-      },
-      () => {
-        console.log('GET Registrants - now completed.');
-      });
+    this.tableService.getAllTechs(value).then(tech => this.tech = tech);
     this.submitted = true;
   }
 }
