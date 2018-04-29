@@ -20,7 +20,7 @@
 <p-dataTable [value]="tech" [paginator]="true" [rows]="10" [editable]="true">
   <p-column header="Action">
     <ng-template let-tech="rowData" pTemplate="body">
-      <button type="text" pButton label="Delete" (click)="onDelete($event,tech)"></button>
+      <button type="text" pButton label="Delete" (click)="onDelete(tech)"class="ui-button-danger"></button>
     </ng-template>
   </p-column>
   <p-column field="firstName" header="First Name" sortable="true"></p-column>

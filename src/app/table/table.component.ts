@@ -29,16 +29,16 @@ export class TableComponent implements OnInit {
   }
 
   public onDelete(value: any) {
-    console.log(value)
+    // console.log(value)
     this.tableService.deleteRegistrant(value)
   .subscribe(
       value => {
-        console.log('[POST] create Registrant successfully', value);
+        console.log('[POST] delete Registrant successfully', value);
       }, error => {
-        console.log('FAIL to create Registrants!');
+        console.log('FAIL to delete Registrants!');
       },
       () => {
-        console.log('POST Registrants - now completed.');
+        console.log('POST Registrant - now completed.');
       });
     this.submitted = true;
   }
