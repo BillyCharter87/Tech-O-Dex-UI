@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms'
+import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms'
 import { UserformService } from './userform.service';
 
 @Component({
@@ -12,16 +12,14 @@ export class UserformComponent implements OnInit {
 
   userForm: FormGroup;
   private submitted;
-  returnedName ='';
-
-  constructor(private userFormService: UserformService) {}
+  constructor(private userFormService: UserformService, private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.userForm = new FormGroup({
-      firstName : new FormControl(''),
-      lastName : new FormControl(''),
-      eId : new FormControl(''),
-      tech : new FormControl('')
+    this.userForm = this.fb.group({
+      firstName : new FormControl('',Validators.required),
+      lastName : new FormControl('',Validators.required),
+      eId : new FormControl('',Validators.required),
+      tech : new FormControl('',Validators.required)
     })
   }
 
@@ -30,7 +28,7 @@ export class UserformComponent implements OnInit {
     this.userFormService.submitUserForm(value)
       .subscribe(
         value => {
-          console.log('[POST] create Registrants successfully', value);
+          console.log('[POST] create Registrant successfully', value);
         }, error => {
           console.log('FAIL to create Registrants!');
         },

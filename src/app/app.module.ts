@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { UserformModule } from './userform/userform.module'
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'
-import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { DataTableModule,SharedModule } from 'primeng/primeng';
 import { TableModule } from "./table/table.module";
+import { ButtonModule } from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { TableModule } from "./table/table.module";
     SharedModule,
     HttpClientModule,
     TableModule,
-    HttpModule
+    ButtonModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

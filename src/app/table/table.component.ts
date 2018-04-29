@@ -1,7 +1,7 @@
 import { TableService} from './table.service';
 import { OnInit, Component} from "@angular/core";
 import { Tech} from "./tech.interface";
-import { FormGroup, FormControl } from '@angular/forms'
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 
 
 @Component({
@@ -16,11 +16,11 @@ export class TableComponent implements OnInit {
   techForm: FormGroup;
   private submitted;
 
-  constructor(private tableService: TableService) {}
+  constructor(private tableService: TableService, private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.techForm = new FormGroup({
-      technology : new FormControl('')
+    this.techForm = this.fb.group({
+      technology : new FormControl('',Validators.required)
     })
   }
 
