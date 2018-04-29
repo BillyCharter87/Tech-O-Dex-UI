@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { TableService } from './table.service';
+import { TableService} from './table.service';
+import { OnInit, Component} from "@angular/core";
+import { Tech} from "./tech.interface";
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+
 
 @Component({
   selector: 'app-table',
@@ -9,10 +12,20 @@ import { TableService } from './table.service';
 })
 export class TableComponent implements OnInit {
 
-  constructor(private tableService: TableService ) { }
+  tech: Tech[];
+  techForm: FormGroup;
+  private submitted;
+
+  constructor(private tableService: TableService, private fb: FormBuilder) {}
 
   ngOnInit() {
-      this.tableService.getExperts();
+    this.techForm = this.fb.group({
+      technology : new FormControl('',Validators.required)
+    })
   }
 
+  public onFindAll(value: any) {
+    this.tableService.getAllTechs(value).then(tech => this.tech = tech);
+    this.submitted = true;
+  }
 }

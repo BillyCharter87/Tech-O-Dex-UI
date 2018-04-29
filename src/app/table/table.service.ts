@@ -1,20 +1,18 @@
-import { Injectable } from '@angular/core';
-import { SelectItem } from 'primeng/primeng';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Tech } from "./tech.interface";
 
 @Injectable()
 export class TableService {
 
-  dummyData: SelectItem[];
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getAllTechs(technology) {
 
-  public getExperts(){
-    this.loadDummyData()
-    let hi = 'hi';
-    return hi;
-  }
-
-  private loadDummyData(){
-
+    const url = 'http://localhost:8080/findAll/?tech=' + technology.technology;
+    return this.http.get(url)
+      .toPromise()
+      .then(res => <Tech[]> res)
+      .then(data => { return data; });
   }
 }

@@ -3,16 +3,15 @@ import { NgModule } from '@angular/core';
 import { UserformModule } from './userform/userform.module'
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'
-import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { DataTableModule,SharedModule } from 'primeng/primeng';
-import { TableComponent } from './table/table.component';
+import { TableModule } from "./table/table.module";
+import { ButtonModule } from 'primeng/primeng';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TableComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +21,8 @@ import { TableComponent } from './table/table.component';
     DataTableModule,
     SharedModule,
     HttpClientModule,
-    HttpModule
+    TableModule,
+    ButtonModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

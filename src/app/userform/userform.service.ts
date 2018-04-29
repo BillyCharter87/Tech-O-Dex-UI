@@ -12,6 +12,8 @@ export class UserformService {
 
   public submitUserForm(registrant : Registrant): Observable<any> {
 
+    console.log(registrant)
+
     const url = 'http://localhost:8080/registration';
     const headers = new HttpHeaders();
     const options = {headers, responseType: 'text' as 'text'};
