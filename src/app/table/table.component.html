@@ -18,8 +18,13 @@
 </form>
 <br>
 <p-dataTable [value]="tech" [paginator]="true" [rows]="10" [editable]="true">
-  <p-column field="firstName" header="FirstName" sortable="true" [editable]="true"></p-column>
-  <p-column field="lastName" header="LastName" sortable="true" [editable]="true"></p-column>
-  <p-column field="eId" header="EId" sortable="true" [editable]="true"></p-column>
-  <p-column field="tech" header="Tech" sortable="true" [editable]="true"></p-column>
+  <p-column header="Action">
+    <ng-template let-tech="rowData" pTemplate="body">
+      <button type="text" pButton label="Delete" (click)="onDelete(tech)"class="ui-button-danger"></button>
+    </ng-template>
+  </p-column>
+  <p-column field="firstName" header="First Name" sortable="true"></p-column>
+  <p-column field="lastName" header="Last Name" sortable="true"></p-column>
+  <p-column field="eId" header="EId" sortable="true"></p-column>
+  <p-column field="tech" header="Tech" sortable="true"></p-column>
 </p-dataTable>
