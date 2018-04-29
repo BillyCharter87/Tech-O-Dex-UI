@@ -1,21 +1,25 @@
 <form class = "container" [formGroup] = "techForm" (ngSubmit)="onFindAll(techForm.value);techForm.reset()">
   <div>
+    <br>
     <h2>Enter Technology to find an expert!</h2>
 
-    <input formControlName=technology placeholder="Technology">
+    <div class="ui-g-12 ui-md-4">
+      <div class="ui-inputgroup">
+        <button pButton label="Find Tech" (click)="onFindAll()" [disabled]="!techForm.valid"></button>
+        <input type="text" formControlName=technology pInputText placeholder="Technology">
+      </div>
+    </div>
     <div *ngIf="!techForm.controls['technology'].valid && techForm.controls['technology'].dirty">
       <span *ngIf="techForm.controls['technology'].errors['required']" style="color: red;">Technology is required</span>
     </div>
     <br>
     <br>
-    <button pButton label="Find Tech" (click)="onFindAll()" class="button" [disabled]="!techForm.valid"></button>
-
   </div>
 </form>
 <br>
-<p-dataTable [value]="tech" [paginator]="true" [rows]="10">
-  <p-column field="firstName" header="FirstName" sortable="true"></p-column>
-  <p-column field="lastName" header="LastName" sortable="true"></p-column>
-  <p-column field="eId" header="EId" sortable="true"></p-column>
-  <p-column field="tech" header="Tech" sortable="true"></p-column>
+<p-dataTable [value]="tech" [paginator]="true" [rows]="10" [editable]="true">
+  <p-column field="firstName" header="FirstName" sortable="true" [editable]="true"></p-column>
+  <p-column field="lastName" header="LastName" sortable="true" [editable]="true"></p-column>
+  <p-column field="eId" header="EId" sortable="true" [editable]="true"></p-column>
+  <p-column field="tech" header="Tech" sortable="true" [editable]="true"></p-column>
 </p-dataTable>
