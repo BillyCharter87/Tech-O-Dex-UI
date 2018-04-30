@@ -29,7 +29,6 @@ export class TableComponent implements OnInit {
   }
 
   public onDelete(value: any) {
-    // console.log(value)
     this.tableService.deleteRegistrant(value)
   .subscribe(
       value => {

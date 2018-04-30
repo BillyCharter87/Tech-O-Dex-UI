@@ -18,7 +18,7 @@ export class TableService {
 
   deleteRegistrant(registrant) {
 
-    console.log(registrant)
+    console.log(registrant.id)
 
     const url = 'http://localhost:8080/delete'
     const headers = new HttpHeaders();
