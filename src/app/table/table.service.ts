@@ -15,4 +15,10 @@ export class TableService {
       .then(res => <Tech[]> res)
       .then(data => { return data; });
   }
+
+  deleteRegistrant(registrant) {
+
+    const url = 'http://localhost:8080/delete/?id=' + registrant.id;
+    return this.http.get(url);
+  }
 }

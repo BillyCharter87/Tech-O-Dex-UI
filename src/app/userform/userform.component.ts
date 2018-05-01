@@ -19,7 +19,7 @@ export class UserformComponent implements OnInit {
       firstName : new FormControl('',Validators.required),
       lastName : new FormControl('',Validators.required),
       eId : new FormControl('',Validators.required),
-      tech : new FormControl('',Validators.required)
+      tech : new FormControl('',Validators.required),
     })
   }
 

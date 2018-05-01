@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/components/button/button';
+import {UserformService} from "./userform.service";
 
 @NgModule({
   imports: [

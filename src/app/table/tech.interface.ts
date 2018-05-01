@@ -3,4 +3,5 @@ export interface Tech {
   lastName: string;
   eId: string;
   technology: string;
+  id: number;
 }
