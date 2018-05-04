@@ -25,19 +25,18 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin(value: any) {
-      this.router.navigateByUrl('/dashboard')
 
-
-    // this.loginService.onLogin(value)
-    //   .subscribe(
-    //     value => {
-    //       console.log('[POST] login Registrant successfully', value);
-    //     }, error => {
-    //       console.log('FAIL to login Registrant!');
-    //     },
-    //     () => {
-    //       console.log('POST Registrants - now completed.');
-    //     });
+    this.loginService.onLogin(value)
+      .subscribe(
+        value => {
+          console.log('[POST] login Registrant successfully');
+          this.router.navigateByUrl('/dashboard')
+        }, error => {
+          console.log('FAIL to login Registrant!');
+        },
+        () => {
+          console.log('POST Registrants - now completed.');
+        });
     this.submitted = true;
   }
 }

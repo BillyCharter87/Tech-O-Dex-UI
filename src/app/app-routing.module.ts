@@ -5,14 +5,20 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
 export const appRouter: Routes = [
+
   {
-    path: '**',
-    component: LoginComponent
+    path: '',
+    component: LoginComponent,
+    pathMatch: 'full'
   },
   {
     path: 'dashboard',
     component: DashboardComponent
-  }
+  },
+  {
+    path: '**',
+    component: LoginComponent
+  },
 ];
 
 export const appRoutes: ModuleWithProviders = RouterModule.forRoot(appRouter);

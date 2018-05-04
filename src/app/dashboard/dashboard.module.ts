@@ -5,6 +5,10 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/components/button/button';
 import { DashboardComponent } from "./dashboard.component";
+import { AccordionModule } from "primeng/components/accordion/accordion";
+import { UserformModule } from "../userform/userform.module";
+import { DataTableModule } from "primeng/components/datatable/datatable";
+import {TableModule} from "../table/table.module";
 
 @NgModule({
   imports: [
@@ -12,7 +16,11 @@ import { DashboardComponent } from "./dashboard.component";
     ButtonModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AccordionModule,
+    UserformModule,
+    DataTableModule,
+    TableModule
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent]
