@@ -8,10 +8,16 @@ import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { DataTableModule,SharedModule } from 'primeng/primeng';
 import { TableModule } from "./table/table.module";
 import { ButtonModule } from 'primeng/primeng';
+import { AccordionModule } from 'primeng/primeng';
+import { LoginModule } from './login/login.module';
+import { RouterModule} from '@angular/router';
+import { appRoutes } from './app-routing.module';
+import { DashboardModule } from "./dashboard/dashboard.module";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,9 +28,14 @@ import { ButtonModule } from 'primeng/primeng';
     SharedModule,
     HttpClientModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    AccordionModule,
+    LoginModule,
+    DashboardModule,
+    appRoutes
   ],
-  providers: [HttpClient],
+  exports: [RouterModule],
+  providers: [HttpClient, LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,30 +1,35 @@
-<form class = "container" [formGroup] = "techForm" (ngSubmit)="onFindAll(techForm.value);techForm.reset()">
-  <div>
-    <br>
-    <h2>Enter Technology to find an expert!</h2>
+<div>
+  <form class = "container" [formGroup] = "techForm" (ngSubmit)="onFindAll(techForm.value);techForm.reset()">
+    <div>
+      <br>
+      <h2 style="text-align:center">Enter Technology to find an expert!</h2>
 
-    <div class="ui-g-12 ui-md-4">
-      <div class="ui-inputgroup">
-        <button pButton label="Find Tech" (click)="onFindAll()" [disabled]="!techForm.valid"></button>
-        <input type="text" formControlName=technology pInputText placeholder="Technology">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <button pButton label="Find Tech" (click)="onFindAll()" [disabled]="!techForm.valid"></button>
+          <input type="text" formControlName=technology pInputText placeholder="Technology">
+        </div>
       </div>
+      <div *ngIf="!techForm.controls['technology'].valid && techForm.controls['technology'].dirty">
+        <span *ngIf="techForm.controls['technology'].errors['required']" style="color: red;">Technology is required</span>
+      </div>
+      <br>
+      <br>
     </div>
-    <div *ngIf="!techForm.controls['technology'].valid && techForm.controls['technology'].dirty">
-      <span *ngIf="techForm.controls['technology'].errors['required']" style="color: red;">Technology is required</span>
-    </div>
-    <br>
-    <br>
-  </div>
-</form>
+  </form>
+</div>
 <br>
-<p-dataTable [value]="tech" [paginator]="true" [rows]="10" [editable]="true">
-  <p-column header="Action">
-    <ng-template let-tech="rowData" pTemplate="body">
-      <button type="text" pButton label="Delete" (click)="onDelete(tech)"class="ui-button-danger"></button>
-    </ng-template>
-  </p-column>
-  <p-column field="firstName" header="First Name" sortable="true"></p-column>
-  <p-column field="lastName" header="Last Name" sortable="true"></p-column>
-  <p-column field="eId" header="EId" sortable="true"></p-column>
-  <p-column field="tech" header="Tech" sortable="true"></p-column>
-</p-dataTable>
+
+<div class="tableWidth">
+  <p-dataTable [value]="tech" [paginator]="true" [rows]="10" [editable]="true">
+    <p-column header="Action">
+      <ng-template let-tech="rowData" pTemplate="body">
+        <button type="text" pButton label="Delete" (click)="onDelete(tech)"class="ui-button-danger"></button>
+      </ng-template>
+    </p-column>
+    <p-column field="firstName" header="First Name" sortable="true"></p-column>
+    <p-column field="lastName" header="Last Name" sortable="true"></p-column>
+    <p-column field="eId" header="EId" sortable="true"></p-column>
+    <p-column field="tech" header="Tech" sortable="true"></p-column>
+  </p-dataTable>
+</div>
