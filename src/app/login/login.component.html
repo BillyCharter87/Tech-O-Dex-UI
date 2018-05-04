@@ -1,14 +1,14 @@
 <div>
-  <form class = "container" [formGroup] = "loginForm" (ngSubmit)="onRegister(loginForm.value);loginForm.reset()">
+  <form class = "container" [formGroup] = "loginForm" (ngSubmit)="onLogin(loginForm.value);loginForm.reset()">
     <div>
       <h2>Please Login</h2>
 
-      <input formControlName=firstName placeholder="First Name">
+      <input formControlName=eID placeholder="eId">
       <div *ngIf="!loginForm.controls['eID'].valid && loginForm.controls['eID'].dirty">
         <span *ngIf="loginForm.controls['eID'].errors['required']" style="color: red;">eID is required</span>
       </div>
       <br>
-      <input formControlName=lastName placeholder="Last Name">
+      <input formControlName=password placeholder="Password">
       <div *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty">
         <span *ngIf="loginForm.controls['password'].errors['required']" style="color: red;">Password is required
           .</span>

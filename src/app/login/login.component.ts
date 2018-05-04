@@ -7,7 +7,8 @@ import { Router} from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
 
@@ -24,11 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin(value: any) {
-
-
-    if(value.eId == 'admin' && value.password == 'admin'){
       this.router.navigateByUrl('/dashboard')
-    }
 
 
     // this.loginService.onLogin(value)
