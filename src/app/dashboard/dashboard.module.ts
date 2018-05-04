@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/components/button/button';
-import { LoginComponent } from "./login.component";
+import { DashboardComponent } from "./dashboard.component";
 
 @NgModule({
   imports: [
@@ -14,9 +14,9 @@ import { LoginComponent } from "./login.component";
     ReactiveFormsModule,
     FormsModule
   ],
-  declarations: [LoginComponent],
-  exports: [LoginComponent],
+  declarations: [DashboardComponent],
+  exports: [DashboardComponent]
 })
-export class LoginModule {
+export class DashboardModule {
 
 }

@@ -10,6 +10,10 @@ import { TableModule } from "./table/table.module";
 import { ButtonModule } from 'primeng/primeng';
 import { AccordionModule } from 'primeng/primeng';
 import { LoginModule } from './login/login.module';
+import { RouterModule} from '@angular/router';
+import { appRoutes } from './app-routing.module';
+import { DashboardModule } from "./dashboard/dashboard.module";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
@@ -26,9 +30,12 @@ import { LoginModule } from './login/login.module';
     TableModule,
     ButtonModule,
     AccordionModule,
-    LoginModule
+    LoginModule,
+    DashboardModule,
+    appRoutes
   ],
-  providers: [HttpClient],
+  exports: [RouterModule],
+  providers: [HttpClient, LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
