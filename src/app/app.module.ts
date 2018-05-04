@@ -8,10 +8,12 @@ import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { DataTableModule,SharedModule } from 'primeng/primeng';
 import { TableModule } from "./table/table.module";
 import { ButtonModule } from 'primeng/primeng';
+import { AccordionModule } from 'primeng/primeng';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,9 @@ import { ButtonModule } from 'primeng/primeng';
     SharedModule,
     HttpClientModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    AccordionModule,
+    LoginModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
