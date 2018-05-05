@@ -11,7 +11,9 @@ export class LoginService {
 
   public onLogin(user : User): Observable<any> {
 
-    const url = 'http://localhost:8080/registration';
+    console.log(user)
+
+    const url = 'http://localhost:8080/login';
     const headers = new HttpHeaders();
     const options = {headers, responseType: 'text' as 'text'};
     headers.append('Content-Type','application/json charset=utf=8');
