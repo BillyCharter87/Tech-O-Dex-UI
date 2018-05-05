@@ -3,9 +3,9 @@
     <div>
       <h2>Please Login</h2>
 
-      <input formControlName=eID placeholder="eId">
-      <div *ngIf="!loginForm.controls['eID'].valid && loginForm.controls['eID'].dirty">
-        <span *ngIf="loginForm.controls['eID'].errors['required']" style="color: red;">eID is required</span>
+      <input formControlName=eId placeholder="eId">
+      <div *ngIf="!loginForm.controls['eId'].valid && loginForm.controls['eId'].dirty">
+        <span *ngIf="loginForm.controls['eId'].errors['required']" style="color: red;">eID is required</span>
       </div>
       <br>
       <input formControlName=password placeholder="Password">
