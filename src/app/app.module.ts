@@ -4,7 +4,6 @@ import { UserformModule } from './userform/userform.module'
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { DataTableModule,SharedModule } from 'primeng/primeng';
 import { TableModule } from "./table/table.module";
 import { ButtonModule } from 'primeng/primeng';
@@ -17,13 +16,12 @@ import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     UserformModule,
-    DropdownModule,
     DataTableModule,
     SharedModule,
     HttpClientModule,

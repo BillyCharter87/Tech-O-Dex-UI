@@ -8,7 +8,8 @@ import { DashboardComponent } from "./dashboard.component";
 import { AccordionModule } from "primeng/components/accordion/accordion";
 import { UserformModule } from "../userform/userform.module";
 import { DataTableModule } from "primeng/components/datatable/datatable";
-import {TableModule} from "../table/table.module";
+import { TableModule } from "../table/table.module";
+import { ChartModule } from "../chart/chart.module";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {TableModule} from "../table/table.module";
     AccordionModule,
     UserformModule,
     DataTableModule,
-    TableModule
+    TableModule,
+    ChartModule
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent]
