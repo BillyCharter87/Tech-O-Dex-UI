@@ -1,19 +1,36 @@
 import {Component, OnInit, ViewChild, ElementRef, OnDestroy, AfterContentInit} from '@angular/core';
 import { chart } from 'highcharts';
+import {ChartService} from "./chart.service";
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  styleUrls: ['./chart.component.css'],
+  providers: [ChartService]
 })
 export class ChartComponent implements OnInit, AfterContentInit, OnDestroy  {
   @ViewChild('chartTarget') chartTarget: ElementRef;
   chart: Highcharts.ChartObject;
+  private submitted;
 
-  constructor() {}
-  ngOnInit() {}
+  constructor(private chartService: ChartService) {}
+  ngOnInit() {
+    // let tech : string[];
+    // tech = this.chartService.findAllTech(value).then(tech => this.tech = tech)
+    //   .subscribe(
+    //     value => {
+    //       console.log('PASS - Getting all Techs for High Charts!');
+    //     }, error => {
+    //       console.log('FAIL - Getting all Techs for High Charts!');
+    //     },
+    //     () => {
+    //       console.log('GET Finding All Techs - now completed.');
+    //     });
+    // this.submitted = true;
+  }
 
   ngAfterContentInit() {
+
     const options: Highcharts.Options = {
       chart: {
         type: 'pie'
